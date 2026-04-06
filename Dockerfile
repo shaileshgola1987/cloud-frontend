@@ -1,26 +1,16 @@
-# 1. Use official Node.js image
 FROM node:20-alpine
 
-# 2. Set working directory
 WORKDIR /app
 
-# 3. Copy package files first (for caching)
+# Copy dependencies
 COPY package.json package-lock.json* ./
-
-# 4. Install dependencies
 RUN npm install
 
-# 5. Copy all project files
+# Copy app code
 COPY . .
 
-# 6. Build Next.js app
-RUN npm run build
-
-# 7. Expose port 3300
+# Expose port
 EXPOSE 3300
 
-# 8. Set environment variable for port
-ENV PORT=3300
-
-# 9. Start the app
+# Start React app (uses HOST + PORT from package.json)
 CMD ["npm", "start"]

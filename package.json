@@ -1,5 +1,5 @@
 {
-  "name": "driveclone-frontend",
+  "name": "cloud-frontend",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
@@ -14,10 +14,9 @@
     "date-fns": "^3.0.6"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "HOST=0.0.0.0 PORT=3300 react-scripts start",
     "build": "react-scripts build"
   },
-  "proxy": "http://103.174.102.194:5500",
   "browserslist": {
     "production": [">0.2%", "not dead", "not op_mini all"],
     "development": ["last 1 chrome version", "last 1 firefox version"]
